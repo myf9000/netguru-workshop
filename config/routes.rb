@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :reports do
-    get :subjects
+  devise_for :users
+  resources :subjects do
+  	collection do
+    	get :reports
+	end
   end
 
   resources :students
